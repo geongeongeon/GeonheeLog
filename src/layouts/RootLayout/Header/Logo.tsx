@@ -13,6 +13,6 @@ const Logo = () => {
 export default Logo
 
 const StyledWrapper = styled(Link)`
-  font-size: 1.2rem;
+  font-size: 1.175rem;
   font-weight: bold;
 `
