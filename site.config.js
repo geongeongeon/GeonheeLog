@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "또 개발하는거니",
+    title: "또 개발하는 거니",
     description: "Welcome to GeonheeLog!",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
