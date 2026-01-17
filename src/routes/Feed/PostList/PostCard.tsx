@@ -172,7 +172,7 @@ const StyledWrapper = styled(Link)`
           margin-right: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
-          color: ${({ theme }) => theme.colors.gray10};
+          color: ${({ theme }) => theme.colors.gray11};
 
           @media (min-width: 768px) {
             margin-left: 0;
