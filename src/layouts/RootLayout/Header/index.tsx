@@ -1,19 +1,19 @@
 import NavBar from "./NavBar"
 import Logo from "./Logo"
 import ThemeToggle from "./ThemeToggle"
-// import ProgressBar from "./ProgressBar"
+import ProgressBar from "./ProgressBar"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
-// import { useRouter } from "next/router"
+import { useRouter } from "next/router"
 
 type Props = {
   fullWidth: boolean
 }
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
-  // const router = useRouter()
+  const router = useRouter()
 
-  // const showProgress = router.pathname !== "/"
+  const showProgress = router.pathname !== "/"
 
   return (
     <StyledWrapper>
@@ -25,7 +25,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
         </div>
       </div>
       
-      {/* {showProgress && <ProgressBar />} */}
+      {showProgress && <ProgressBar />}
     </StyledWrapper>
   )
 }

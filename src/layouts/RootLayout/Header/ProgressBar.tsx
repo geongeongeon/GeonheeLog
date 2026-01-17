@@ -45,13 +45,13 @@ const ProgressContainer = styled.div`
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.1);
+  background: transparent;
   z-index: 1001;
 `
 
 const ProgressFill = styled.div`
   height: 100%;
   width: 0%;
-  background: #007bff;
-  transition: width 0.1s ease-out;
+  background: "#ff8c00";
+  transition: width 0.3s ease-out;
 `
