@@ -148,38 +148,39 @@ const StyledWrapper = styled(Link)`
           }
         }
       }
-      .hr {
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
-        align-self: stretch;
-        width: 1px;
-        background-color: ${({ theme }) => theme.colors.gray10};
-      }
       > .date {
         display: flex;
-        margin-bottom: 1rem;
-        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+        gap: 0.75rem;
         align-items: center;
 
         .author {
           display: flex;
+          gap: 0.5rem;
           align-items: center;
-          gap: 0.375rem;
           font-size: 0.875rem;
           font-weight: 500;
           color: ${({ theme }) => theme.colors.gray11};
           white-space: nowrap;
         }
 
-        .dot {
-          color: ${({ theme }) => theme.colors.gray9};
-          margin: 0 0.25rem;
+        .hr {
+          margin-top: 0.25rem;
+          margin-bottom: 0.25rem;
+          align-self: stretch;
+          width: 1px;
+          background-color: ${({ theme }) => theme.colors.gray10};
         }
 
         .content {
+          margin-right: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
           color: ${({ theme }) => theme.colors.gray10};
+
+          @media (min-width: 768px) {
+            margin-left: 0;
+          }
         }
       }
       > .summary {
