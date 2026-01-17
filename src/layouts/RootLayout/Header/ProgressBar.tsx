@@ -18,7 +18,6 @@ const ProgressBar: React.FC = () => {
       let percent = ((scrollY - postTop) / scrollableHeight) * 100
       percent = Math.min(Math.max(percent, 0), 100)
 
-      // 글이 화면보다 짧으면 ProgressBar 100% 표시
       if (postHeight <= windowHeight) {
         percent = 100
       }
@@ -40,8 +39,8 @@ const ProgressBar: React.FC = () => {
 export default ProgressBar
 
 const ProgressContainer = styled.div`
-  position: absolute; /* sticky 대신 absolute로 Header 전체에 붙음 */
-  bottom: 0;          /* Header 맨 아래 */
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 4px;
@@ -52,6 +51,6 @@ const ProgressContainer = styled.div`
 const ProgressFill = styled.div`
   height: 100%;
   width: 0%;
-  background: "#ff8c00";
+  background: #ff8c00;
   transition: width 0.3s ease-out;
 `
