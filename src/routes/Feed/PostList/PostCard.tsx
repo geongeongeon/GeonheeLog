@@ -36,7 +36,24 @@ const PostCard: React.FC<Props> = ({ data }) => {
           <header className="top">
             <h2>{data.title}</h2>
           </header>
+
           <div className="date">
+            {data.author && data.author[0] && data.author[0].name && (
+              <>
+                <div className="author">
+                  <Image
+                    src={data.author[0].profile_photo || CONFIG.profile.image}
+                    alt="profile"
+                    width={16}
+                    height={16}
+                    css={{ borderRadius: "50%" }}
+                  />
+                  <span>{data.author[0].name}</span>
+                </div>
+                <span className="dot">·</span>
+              </>
+            )}
+
             <div className="content">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
@@ -44,6 +61,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
               )}
             </div>
           </div>
+
           <div className="summary">
             <p>{data.summary}</p>
           </div>
@@ -133,15 +151,28 @@ const StyledWrapper = styled(Link)`
       > .date {
         display: flex;
         margin-bottom: 1rem;
-        gap: 0.5rem;
+        gap: 0.25rem;
         align-items: center;
+
+        .author {
+          display: flex;
+          align-items: center;
+          gap: 0.375rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: ${({ theme }) => theme.colors.gray11};
+          white-space: nowrap;
+        }
+
+        .dot {
+          color: ${({ theme }) => theme.colors.gray9};
+          margin: 0 0.25rem;
+        }
+
         .content {
           font-size: 0.875rem;
           line-height: 1.25rem;
           color: ${({ theme }) => theme.colors.gray10};
-          @media (min-width: 768px) {
-            margin-left: 0;
-          }
         }
       }
       > .summary {
