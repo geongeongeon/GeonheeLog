@@ -42,15 +42,15 @@ const PostCard: React.FC<Props> = ({ data }) => {
               <>
                 <div className="author">
                   <Image
-                    src={data.author[0].profile_photo || CONFIG.profile.image}
-                    alt="profile"
-                    width={16}
-                    height={16}
                     css={{ borderRadius: "50%" }}
+                    src={data.author[0].profile_photo || CONFIG.profile.image}
+                    alt="profile_photo"
+                    width={24}
+                    height={24}
                   />
-                  <span>{data.author[0].name}</span>
+                  <div className="">{data.author[0].name}</div>
                 </div>
-                <span className="dot">·</span>
+                <div className="hr"></div>
               </>
             )}
 
