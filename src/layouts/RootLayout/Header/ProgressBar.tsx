@@ -8,30 +8,24 @@ const ProgressBar: React.FC = () => {
     const post = document.getElementById("post-content")
     if (!post) return
 
-    let animationFrame: number
-
     const handleScroll = () => {
       const scrollY = window.scrollY
       const postTop = post.offsetTop
       const postHeight = post.scrollHeight
       const windowHeight = window.innerHeight
 
-      const scrollableHeight = Math.max(postHeight - windowHeight, 1)
-      let targetPercent = ((scrollY - postTop) / scrollableHeight) * 100
-      targetPercent = Math.min(Math.max(targetPercent, 0), 100)
-      if (postHeight <= windowHeight) targetPercent = 100
+      const scrollableHeight = postHeight - windowHeight
 
-      // 부드럽게 증가
-      const animate = () => {
-        setProgress(prev => {
-          const diff = targetPercent - prev
-          if (Math.abs(diff) < 0.1) return targetPercent
-          return prev + diff * 0.1 // 10%씩 이동
-        })
-        animationFrame = requestAnimationFrame(animate)
+      let percent = 0
+
+      if (scrollableHeight <= 0) {
+        percent = scrollY > postTop ? 100 : 0
+      } else {
+        percent = ((scrollY - postTop) / scrollableHeight) * 100
+        percent = Math.min(Math.max(percent, 0), 100)
       }
-      cancelAnimationFrame(animationFrame)
-      animate()
+
+      setProgress(percent)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -61,4 +55,5 @@ const ProgressFill = styled.div`
   height: 100%;
   width: 0%;
   background: #e68a2b;
+  transition: width 0.4s ease-out;
 `
