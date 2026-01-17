@@ -55,5 +55,5 @@ const ProgressFill = styled.div`
   height: 100%;
   width: 0%;
   background: #e68a2b;
-  transition: width 0.4s ease-out;
+  transition: width 0.3s ease-out;
 `
