@@ -148,6 +148,13 @@ const StyledWrapper = styled(Link)`
           }
         }
       }
+      .hr {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        align-self: stretch;
+        width: 1px;
+        background-color: ${({ theme }) => theme.colors.gray10};
+      }
       > .date {
         display: flex;
         margin-bottom: 1rem;
