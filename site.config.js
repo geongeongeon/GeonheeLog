@@ -7,7 +7,8 @@ const CONFIG = {
     bio: "개발이 좋아요",
     email: "leegeonhee0204@naver.com",
     github: "https://github.com/geongeongeon",
-    instagram: ""
+    instagram: "",
+    linkedin: ""
   },
   projects: [
     {
