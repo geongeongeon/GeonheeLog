@@ -14,8 +14,16 @@ const ProgressBar: React.FC = () => {
       const postHeight = post.scrollHeight
       const windowHeight = window.innerHeight
 
-      const percent = ((scrollY - postTop) / (postHeight - windowHeight)) * 100
-      setProgress(Math.min(Math.max(percent, 0), 100))
+      const scrollableHeight = Math.max(postHeight - windowHeight, 1)
+      let percent = ((scrollY - postTop) / scrollableHeight) * 100
+      percent = Math.min(Math.max(percent, 0), 100)
+
+      // 글이 화면보다 짧으면 ProgressBar 100% 표시
+      if (postHeight <= windowHeight) {
+        percent = 100
+      }
+
+      setProgress(percent)
     }
 
     window.addEventListener("scroll", handleScroll)
