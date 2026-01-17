@@ -153,17 +153,14 @@ const StyledWrapper = styled(Link)`
         margin-bottom: 0.75rem;
         gap: 0.75rem;
         align-items: center;
-
         .author {
           display: flex;
           gap: 0.5rem;
           align-items: center;
           font-size: 0.875rem;
-          font-weight: 500;
           color: ${({ theme }) => theme.colors.gray11};
           white-space: nowrap;
         }
-
         .hr {
           margin-top: 0.25rem;
           margin-bottom: 0.25rem;
@@ -171,7 +168,6 @@ const StyledWrapper = styled(Link)`
           width: 1px;
           background-color: ${({ theme }) => theme.colors.gray10};
         }
-
         .content {
           margin-right: 0.5rem;
           font-size: 0.875rem;
