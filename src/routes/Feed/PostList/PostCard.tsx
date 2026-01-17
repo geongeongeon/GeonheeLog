@@ -158,7 +158,7 @@ const StyledWrapper = styled(Link)`
           gap: 0.5rem;
           align-items: center;
           font-size: 0.875rem;
-          color: ${({ theme }) => theme.colors.gray11};
+          color: ${({ theme }) => theme.colors.gray10};
           white-space: nowrap;
         }
         .hr {
@@ -166,13 +166,13 @@ const StyledWrapper = styled(Link)`
           margin-bottom: 0.25rem;
           align-self: stretch;
           width: 1px;
-          background-color: ${({ theme }) => theme.colors.gray10};
+          background-color: ${({ theme }) => theme.colors.gray9};
         }
         .content {
           margin-right: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
-          color: ${({ theme }) => theme.colors.gray11};
+          color: ${({ theme }) => theme.colors.gray10};
 
           @media (min-width: 768px) {
             margin-left: 0;
