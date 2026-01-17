@@ -1,14 +1,20 @@
 import NavBar from "./NavBar"
 import Logo from "./Logo"
 import ThemeToggle from "./ThemeToggle"
+import ProgressBar from "./ProgressBar"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
+import { useRouter } from "next/router"
 
 type Props = {
   fullWidth: boolean
 }
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
+  const router = useRouter()
+
+  const showProgress = router.pathname !== "/"
+
   return (
     <StyledWrapper>
       <div data-full-width={fullWidth} className="container">
@@ -18,6 +24,8 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
           <NavBar />
         </div>
       </div>
+      
+      {showProgress && <ProgressBar />}
     </StyledWrapper>
   )
 }

@@ -6,7 +6,6 @@ import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
 import usePostQuery from "src/hooks/usePostQuery"
-import ProgressBar from "src/layouts/RootLayout/Header/ProgressBar"
 
 type Props = {}
 
@@ -19,8 +18,6 @@ const PostDetail: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
-      <ProgressBar />
-      
       <article id="post-content">
         {category && (
           <div css={{ marginBottom: "0.5rem" }}>
