@@ -21,7 +21,7 @@ const CONFIG = {
     },
     {
       name: `StudyWith - 스터디 매칭 플랫폼`,
-      href: "https://github.com/palja-good-team/palja",
+      href: "https://github.com/geongeongeon/StudyWith-backend",
     },
   ],
   // blog setting (required)
