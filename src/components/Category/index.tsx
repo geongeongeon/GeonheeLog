@@ -6,16 +6,14 @@ import { colors } from "src/styles"
 
 export const getColorClassByName = (name: string): string => {
   try {
+    const colors = Object.values(COLOR_SET)
     let sum = 0
-    name.split("").forEach((alphabet) => (sum = sum + alphabet.charCodeAt(0)))
-    const colorKey = sum
-      .toString(16)
-      ?.[sum.toString(16).length - 1].toUpperCase()
-    return COLOR_SET[colorKey]
-  } catch {
-    return COLOR_SET[0]
+    name.split("").forEach(c => sum += c.charCodeAt(0))
+    return colors[sum % colors.length] 
+    } catch {
+      return COLOR_SET[0]
+    }
   }
-}
 
 type Props = {
   children: string
