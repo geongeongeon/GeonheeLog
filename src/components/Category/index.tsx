@@ -5,10 +5,10 @@ import styled from "@emotion/styled"
 import { colors } from "src/styles"
 
 const CUSTOM_COLOR_MAP: Record<string, string> = {
-  "🤖 Computer Science": "#8cb8fa",
-  "💻 Development": "#77f5a1",
-  "🚨 Trouble Shooting": "#f88cb5",
-  "🧠 Algorithm": "#fab861"
+  "🤖 Computer Science": "#a0c3f8",
+  "💻 Development": "#91fab4",
+  "🚨 Trouble Shooting": "#f89dc0",
+  "🧠 Algorithm": "#f7c17b"
 }
 
 export const getColorClassByName = (name: string): string => {
