@@ -4,16 +4,29 @@ import { COLOR_SET } from "./constants"
 import styled from "@emotion/styled"
 import { colors } from "src/styles"
 
+const CUSTOM_COLOR_MAP: Record<string, string> = {
+  "🤖 Computer Science": "#4cb7f5",
+  "💻 Development": "#44ef7d",
+  "🚨 Trouble Shooting": "#f55454",
+  "🧠 Algorithm": "#f19d30"
+}
+
 export const getColorClassByName = (name: string): string => {
-  try {
-    const colors = Object.values(COLOR_SET)
-    let sum = 0
-    name.split("").forEach(c => sum += c.charCodeAt(0))
-    return colors[sum % colors.length] 
-    } catch {
-      return COLOR_SET[0]
-    }
+  if (CUSTOM_COLOR_MAP[name]) {
+    return CUSTOM_COLOR_MAP[name]
   }
+  
+  try {
+    let sum = 0
+    name.split("").forEach((alphabet) => (sum = sum + alphabet.charCodeAt(0)))
+    const colorKey = sum
+      .toString(16)
+      ?.[sum.toString(16).length - 1].toUpperCase()
+    return COLOR_SET[colorKey]
+  } catch {
+    return COLOR_SET[0]
+  }
+}
 
 type Props = {
   children: string
