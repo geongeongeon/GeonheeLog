@@ -20,8 +20,10 @@ const ServiceCard: React.FC = () => {
             target="_blank"
           >
             <AiFillCodeSandboxCircle className="icon" />
-            <div className="name">{project.name}</div>
-            <div className="description">{project.description}</div>
+            <div className="text">
+              <div className="name">{project.name}</div>
+              <div className="description">{project.description}</div>
+            </div>
           </a>
         ))}
       </StyledWrapper>
@@ -61,9 +63,19 @@ const StyledWrapper = styled.div`
       font-size: 1.5rem;
       line-height: 2rem;
     }
+    
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
     .name {
       font-size: 0.875rem;
       line-height: 1.25rem;
+    }
+    .description {
+      font-size: 0.725rem;
+      line-height: 1rem;
     }
   }
 `
