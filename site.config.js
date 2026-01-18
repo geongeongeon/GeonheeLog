@@ -12,15 +12,18 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `PALJA - 타임딜 이커머스 플랫폼`,
+      name: `Palja`,
+      description: "타임딜 이커머스 플랫폼",
       href: "https://github.com/palja-good-team/palja",
     },
     {
-      name: `LuckyVickyLogistics - 물류 배송 플랫폼`,
+      name: `Lucky Vicky Logistics`,
+      description: "물류 배송 플랫폼",
       href: "https://github.com/LuckyVickyLogistics/backend-v1",
     },
     {
-      name: `StudyWith - 스터디 매칭 플랫폼`,
+      name: `Study With`,
+      description: "스터디 매칭 플랫폼",
       href: "https://github.com/geongeongeon/StudyWith-backend",
     },
   ],
